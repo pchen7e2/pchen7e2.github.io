@@ -1,5 +1,2 @@
-Here you can say lots of fun things about your site.
+I work on Triton compiler at Meta, with a focus on kernel performance on Nvidia GPU.
 
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
