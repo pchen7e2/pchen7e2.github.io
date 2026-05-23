@@ -33,13 +33,16 @@
   <script type="text/javascript"> hljs.highlightAll(); </script>
   <!-- end highlight.js support -->
 
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        inlineMath: [['$','$']]
+  <!-- Latex -->
+  <!-- ref: https://docs.mathjax.org/en/v4.1/input/tex/delimiters.html -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]}
       }
-    });
+    };
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
+  <!-- end Latex -->
+
 </head>
