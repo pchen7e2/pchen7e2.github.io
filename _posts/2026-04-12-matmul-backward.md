@@ -2,7 +2,7 @@
 
 Reference: https://cs231n.stanford.edu/handouts/derivatives.pdf
 
-In this short note, we aim to derive the backward gradient of a matrix multiplication with minimal math background.
+In this short note, we derive the backward gradient of a matrix multiplication with minimal math background.
 
 # Forward Pass
 

@@ -1,6 +1,6 @@
 # Deriving formula for Backward Gradient of Softmax
 
-In this short note, we aim to derive the backward gradient of a softmax calculation (in Flash Attention) with minimal math background.
+In this short note, we derive the backward gradient of a softmax calculation (in Flash Attention) with minimal math background.
 
 # Forward Pass
 
