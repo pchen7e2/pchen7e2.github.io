@@ -146,3 +146,6 @@ TMA block.
 - [Colfax CUTLASS Tutorial: Fast Matrix-Multiplication with WGMMA on NVIDIA® Hopper™ GPUs](https://research.colfax-intl.com/cutlass-tutorial-wgmma-hopper/)
 - CUTLASS source code for [SM100 UMMA descriptors](https://github.com/NVIDIA/cutlass/blob/cb37157db50d0528c4aea99feb37946ec278e3d9/include/cute/atom/mma_traits_sm100.hpp#L171)
 - Triton source code for [NVMMAShared encoding to Linear Layout conversion](https://github.com/triton-lang/triton/blob/2104a207c0595da7d099dd320967afd0fc41f70d/lib/Dialect/TritonGPU/IR/LinearLayoutConversions.cpp#L153)
+
+Special thanks to Bingyi Zhang from Nvidia! A great amount of details and nuances in this note came from
+extensive discussions and collaborations with Bingyi.
