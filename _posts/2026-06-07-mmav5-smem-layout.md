@@ -79,7 +79,7 @@ records canonical CUTE layouts for the SMEM tensor of one single MMA instruction
 - k represents the number of repeating patterns across columns.
 
 ### MN major
-![MN-major layout](/assets/img/MMAv5-SMEM-MNMajor.png){:width="800px"}
+![MN-major layout](/assets/img/MMAv5-SMEM-MNMajor.png)
 
 (The diagram is drawn as M/N x K following CUTLASS convention)
 
@@ -108,7 +108,7 @@ seen as having full representation of the MMA instruction operand in SMEM.
 
 
 ### K major
-![K-major layout](/assets/img/MMAv5-SMEM-KMajor.png){:width="800px"}
+![K-major layout](/assets/img/MMAv5-SMEM-KMajor.png)
 
 The Canonical CuTe layout in PTX documentation is different from CUTLASS in that CUTLASS assumes `k=1`, which makes sense
 because MMAv5 instruction always has shape K as `32/dtype_byte_size`, i.e. 32 bytes for K-major.
