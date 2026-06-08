@@ -1,4 +1,4 @@
-# (Draft) The Shared Memory layout of Blackwell MMAv5 operands
+# The Shared Memory layout of Blackwell MMAv5 operands
 
 The 5th gen Tensor Core on Blackwell GPU requires MMA's operand B live in SMEM, and operand A live 
 in SMEM or Tensor Memory (TMEM). MMAv3 (Hopper) supports "SS_GEMM" as well where A and B are both in SMEM. The layout is almost the same as v5.
@@ -81,9 +81,9 @@ records canonical CUTE layouts for the SMEM tensor of one single MMA instruction
 ### MN major
 ![MN-major layout](/assets/img/MMAv5-SMEM-MNMajor.png)
 
-(The diagram is drawn as M/N x K following CUTLASS convention)
+(The figure is drawn as M/N x K following CUTLASS convention)
 
-The Canonical CuTe layout in PTX documentation is consistent with CUTLASS, and is shown in the diagram.
+The Canonical CuTe layout in PTX documentation is consistent with CUTLASS, and is shown in the figure.
 
 Inside a Swizzle Atom, there're 8 columns that're adjacent to each other on physical memory. Each column is a contiguous 
 segment on physical memory and has size equal to swizzling byte width.
@@ -135,8 +135,14 @@ swizzling this table shows where in the physical SMEM to find the 8*2 T units of
 
 Each MMA instruction's SMEM operand spans across multiple Swizzle Atoms along MN dim, but only one (or partial) Atom 
 along K dim. So given location of Atom x, the hardware needs SBO to know where to load Atom z and others along MN dim.
-However, LBO is not needed (except non-swizzling cases, not shown in the diagram) because for example Atom y is not 
-needed by the MMA instruction in the diagram.
+However, LBO is not needed (except non-swizzling cases, not shown in the figure) because for example Atom y is not 
+needed by the MMA instruction in the figure.
 
 From the `getCoreMatrixLinearLayout` function above, Triton always distributes the Atoms along strided dim first up to a 
 TMA block.
+
+# References
+- [PTX ISA Documentation v9.3](https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#tcgen05-shared-memory-layout-swizzling)
+- [Colfax CUTLASS Tutorial: Fast Matrix-Multiplication with WGMMA on NVIDIA® Hopper™ GPUs](https://research.colfax-intl.com/cutlass-tutorial-wgmma-hopper/)
+- CUTLASS source code for [SM100 UMMA descriptors](https://github.com/NVIDIA/cutlass/blob/cb37157db50d0528c4aea99feb37946ec278e3d9/include/cute/atom/mma_traits_sm100.hpp#L171)
+- Triton source code for [NVMMAShared encoding to Linear Layout conversion](https://github.com/triton-lang/triton/blob/2104a207c0595da7d099dd320967afd0fc41f70d/lib/Dialect/TritonGPU/IR/LinearLayoutConversions.cpp#L153)
