@@ -69,7 +69,7 @@ records canonical CUTE layouts for the SMEM tensor of one single MMA instruction
 |             | 32B Swizzling               | ((T,2,m),(8,k)):((1,T,LBO),(2T,SBO)) | Swizzle<1, 4, 3>                 |
 |             | 64B Swizzling               | ((T,4,m),(8,k)):((1,T,LBO),(4T,SBO)) | Swizzle<2, 4, 3>                 |
 |             | 128B Swizzling              | ((T,8,m),(8,k)):((1,T,LBO),(8T,SBO)) | Swizzle<3, 4, 3>                 |
-| K- major    | No-swizzling or Interleaved | ((8,m),(T,2k)):((1T,SBO),(1,LBO))    | Swizzle<0, 4, 3>                 |
+| K- major\*  | No-swizzling or Interleaved | ((8,m),(T,2k)):((1T,SBO),(1,LBO))    | Swizzle<0, 4, 3>                 |
 |             | 32B Swizzling               | ((8,m),(T,2k)):((2T,SBO),(1,T))      | Swizzle<1, 4, 3>                 |
 |             | 64B Swizzling               | ((8,m),(T,2k)):((4T,SBO),(1,T))      | Swizzle<2, 4, 3>                 |
 |             | 128B Swizzling              | ((8,m),(T,2k)):((8T,SBO),(1,T))      | Swizzle<3, 4, 3>                 |
@@ -77,6 +77,8 @@ records canonical CUTE layouts for the SMEM tensor of one single MMA instruction
 - T = 128 / sizeof-elements-in-bits T represents scale factor which normalizes matrix element types to 128-bits.
 - m represents the number of repeating patterns across rows.
 - k represents the number of repeating patterns across columns.
+
+\* As shown later in this note, the factor `k` in K-major layout is in fact not needed and should be dropped.
 
 ### MN major
 ![MN-major layout](/assets/img/MMAv5-SMEM-MNMajor.png)
@@ -110,8 +112,8 @@ seen as having full representation of the MMA instruction operand in SMEM.
 ### K major
 ![K-major layout](/assets/img/MMAv5-SMEM-KMajor.png)
 
-The Canonical CuTe layout in PTX documentation is different from CUTLASS in that CUTLASS assumes `k=1`, which makes sense
-because MMAv5 instruction always has shape K as `32/dtype_byte_size`, i.e. 32 bytes for K-major.
+The Canonical CuTe layout in PTX documentation is different from CUTLASS in that CUTLASS dropped factor `k`. We adopt 
+CUTLASS's layouts as the source of truth with confirmation from Nvidia.
 
 Inside a Swizzle Atom, there're 8 rows adjacent to each other on physical memory. Each row is a contiguous
 segment on physical memory and has size equal to swizzling byte width.

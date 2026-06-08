@@ -631,20 +631,20 @@
       "index": "b06",
       "roundness": null,
       "seed": 1443824192,
-      "version": 717,
-      "versionNonce": 1221913281,
+      "version": 718,
+      "versionNonce": 1551270497,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1780881629897,
+      "updated": 1780955262363,
       "link": null,
       "locked": false,
-      "text": "2k * T units",
+      "text": "2 * T units",
       "fontSize": 16.165104166666673,
       "fontFamily": 6,
       "textAlign": "center",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "2k * T units",
+      "originalText": "2 * T units",
       "autoResize": false,
       "lineHeight": 1.25
     },
@@ -803,8 +803,8 @@
     {
       "id": "WShAC_At-_UYSin3FZNSi",
       "type": "text",
-      "x": 578.847981770833,
-      "y": -291.1074218750002,
+      "x": 569.629231770833,
+      "y": -291.7988281250002,
       "width": 578.5546875,
       "height": 60,
       "angle": 0,
@@ -820,8 +820,8 @@
       "index": "b0J",
       "roundness": null,
       "seed": 565340736,
-      "version": 502,
-      "versionNonce": 418124303,
+      "version": 533,
+      "versionNonce": 1568677153,
       "isDeleted": false,
       "boundElements": [
         {
@@ -829,16 +829,16 @@
           "type": "arrow"
         }
       ],
-      "updated": 1780881671945,
+      "updated": 1780955297255,
       "link": null,
       "locked": false,
-      "text": "32B swizzling:     ((8,m),(T,2k)):((2T,SBO),(1,T)),      Swizzle<1, 4, 3>\n64B swizzling:     ((8,m),(T,2k)):((4T,SBO),(1,T)),      Swizzle<2, 4, 3>\n128B swizzling:    ((8,m),(T,2k)):((8T,SBO),(1,T)),      Swizzle<3, 4, 3> ",
+      "text": "32B swizzling:     ((8,m),(T,2)):((2T,SBO),(1,T)),      Swizzle<1, 4, 3>\n64B swizzling:     ((8,m),(T,2)):((4T,SBO),(1,T)),      Swizzle<2, 4, 3>\n128B swizzling:    ((8,m),(T,2)):((8T,SBO),(1,T)),      Swizzle<3, 4, 3> ",
       "fontSize": 16,
       "fontFamily": 6,
       "textAlign": "center",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "32B swizzling:     ((8,m),(T,2k)):((2T,SBO),(1,T)),      Swizzle<1, 4, 3>\n64B swizzling:     ((8,m),(T,2k)):((4T,SBO),(1,T)),      Swizzle<2, 4, 3>\n128B swizzling:    ((8,m),(T,2k)):((8T,SBO),(1,T)),      Swizzle<3, 4, 3> ",
+      "originalText": "32B swizzling:     ((8,m),(T,2)):((2T,SBO),(1,T)),      Swizzle<1, 4, 3>\n64B swizzling:     ((8,m),(T,2)):((4T,SBO),(1,T)),      Swizzle<2, 4, 3>\n128B swizzling:    ((8,m),(T,2)):((8T,SBO),(1,T)),      Swizzle<3, 4, 3> ",
       "autoResize": false,
       "lineHeight": 1.25
     },
@@ -1389,10 +1389,10 @@
     {
       "id": "GVKtO9BkBkLTdpD16CU0V",
       "type": "text",
-      "x": 971.8063732527928,
-      "y": -210.0631510416669,
+      "x": 959.4118420027928,
+      "y": -203.5592447916669,
       "width": 181.5519670360805,
-      "height": 81.54947916666669,
+      "height": 61.162109375000014,
       "angle": 0,
       "strokeColor": "#2f9e44",
       "backgroundColor": "transparent",
@@ -1406,8 +1406,8 @@
       "index": "b0p",
       "roundness": null,
       "seed": 1344700992,
-      "version": 1057,
-      "versionNonce": 247442113,
+      "version": 1085,
+      "versionNonce": 1633274351,
       "isDeleted": false,
       "boundElements": [
         {
@@ -1419,16 +1419,16 @@
           "type": "arrow"
         }
       ],
-      "updated": 1780882177874,
+      "updated": 1780955273422,
       "link": null,
       "locked": false,
-      "text": "One MMA instruction.\n8m rows, each has 2k\ninstances of T units. \n(k is 1)",
+      "text": "One MMA instruction.\n8m rows, each has 2\ninstances of T units. ",
       "fontSize": 16.309895833333336,
       "fontFamily": 6,
       "textAlign": "center",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "One MMA instruction. 8m rows, each has 2k instances of T units. \n(k is 1)",
+      "originalText": "One MMA instruction. 8m rows, each has 2 instances of T units. ",
       "autoResize": false,
       "lineHeight": 1.25
     },
@@ -1437,8 +1437,8 @@
       "type": "arrow",
       "x": 1193.8567251799636,
       "y": 3.8260980024422,
-      "width": 125.80124549307175,
-      "height": 126.83976987744242,
+      "width": 138.24750534598093,
+      "height": 140.7232334191091,
       "angle": 0,
       "strokeColor": "#2f9e44",
       "backgroundColor": "#b2f2bb",
@@ -1452,11 +1452,11 @@
       "index": "b0q",
       "roundness": null,
       "seed": 1025032640,
-      "version": 1041,
-      "versionNonce": 1641982625,
+      "version": 1067,
+      "versionNonce": 780710927,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1780882177874,
+      "updated": 1780955273422,
       "link": null,
       "locked": false,
       "points": [
@@ -1465,8 +1465,8 @@
           0
         ],
         [
-          -125.80124549307175,
-          -126.83976987744242
+          -138.24750534598093,
+          -140.7232334191091
         ]
       ],
       "startBinding": {
@@ -3414,10 +3414,10 @@
     {
       "id": "_5WYS2daL9Ui4-C_oSwd6",
       "type": "arrow",
-      "x": 966.3063732527929,
-      "y": -172.20717839668467,
-      "width": 100.34478217840001,
-      "height": 53.40024347831553,
+      "x": 953.9118420027926,
+      "y": -175.85342362208985,
+      "width": 96.29158237439776,
+      "height": 50.44540450291035,
       "angle": 0,
       "strokeColor": "#2f9e44",
       "backgroundColor": "transparent",
@@ -3431,11 +3431,11 @@
       "index": "b1C",
       "roundness": null,
       "seed": 1300684975,
-      "version": 409,
-      "versionNonce": 483569281,
+      "version": 463,
+      "versionNonce": 950128897,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1780882177874,
+      "updated": 1780955297256,
       "link": null,
       "locked": false,
       "points": [
@@ -3444,8 +3444,8 @@
           0
         ],
         [
-          -100.34478217840001,
-          -53.40024347831553
+          -96.29158237439776,
+          -50.44540450291035
         ]
       ],
       "startBinding": {
