@@ -97,16 +97,6 @@ needed because hardware needs to know where on the physical memory to load Swizz
 From the `getCoreMatrixLinearLayout` function above, Triton always distributes the Atoms along strided dim first up to a
 TMA block.
 
-Note from SMEM and MMA instruction descriptors there're sufficient info to recover the CuTe layout:
-- T: derived from data type
-- m: derived from MN and swizzling mode
-- k: derived from K. However, K is not in either descriptor. It can actually be derived from data type 
-since MMAv5 instruction always has shape K as `32/dtype_byte_size`.
-- LBO/SBO: user supplied in SMEM descriptor
-
-This means theoretically hardware can derive the canonical CuTe layouts given the two descriptors so it can be 
-seen as having full representation of the MMA instruction operand in SMEM.
-
 
 
 ### K major
